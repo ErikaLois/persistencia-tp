@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     nombre: DataTypes.STRING,
     apellido: DataTypes.STRING,
     dni: DataTypes.STRING
-  }, {});
+  }, {
+    tableName: 'profesores',
+    freezeTableName: true});
   
   return profesor;
 };
