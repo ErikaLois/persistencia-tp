@@ -1,4 +1,7 @@
 'use strict';
+
+const materiaCarrera = require("./materiaCarrera");
+
 module.exports = (sequelize, DataTypes) => {
   const materia = sequelize.define('materia', {
     nombre: DataTypes.STRING,
@@ -8,5 +11,10 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true
   });
   
+  materia.associate = models => {
+    materia.belongsToMany(models.carrera, {through: 'materiaCarrera' })
+  };
+
   return materia;
 };
+
