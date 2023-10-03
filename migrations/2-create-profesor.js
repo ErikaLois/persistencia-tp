@@ -20,6 +20,9 @@ module.exports = {
       dni: {
         type: Sequelize.STRING
       },
+      materiaId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

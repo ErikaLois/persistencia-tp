@@ -6,5 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     dni: DataTypes.STRING
   }, {});
   
+  alumno.associate = models => {
+    alumno.belongsToMany(models.materia, {through: 'alumnoMateria' })
+  };
+
   return alumno;
 };

@@ -7,6 +7,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'profesores',
     freezeTableName: true});
+
+    profesor.associate = function(models) {
+      profesor.belongsTo(models.materia, {
+        as: 'Materia-Relacionada',
+        foreignKey: 'materiaId'
+      })
+    };
   
   return profesor;
 };
